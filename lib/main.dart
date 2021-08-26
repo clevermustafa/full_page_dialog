@@ -84,6 +84,54 @@ class _CustomDialogState extends State<CustomDialog> {
     );
   }
 
+  SizedBox donationSubmitButton() {
+    return SizedBox(
+      height: 50,
+      width: double.infinity,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.red),
+        ),
+        onPressed: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.favorite),
+            SizedBox(width: 10),
+            Text(
+              "Donate \$$donation",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  SizedBox otherAmountButton() {
+    return SizedBox(
+      width: double.infinity,
+      height: 40,
+      child: OutlinedButton(
+        style: ButtonStyle(
+          side: MaterialStateProperty.all<BorderSide>(
+              BorderSide(color: Colors.orange)),
+        ),
+        onPressed: () {},
+        child: Text(
+          "Other amount",
+          style: TextStyle(
+            color: Colors.orange,
+            fontSize: 20,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,54 +253,6 @@ class _CustomDialogState extends State<CustomDialog> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  SizedBox donationSubmitButton() {
-    return SizedBox(
-      height: 50,
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.red),
-        ),
-        onPressed: () {},
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.favorite),
-            SizedBox(width: 10),
-            Text(
-              "Donate \$$donation",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  SizedBox otherAmountButton() {
-    return SizedBox(
-      width: double.infinity,
-      height: 40,
-      child: OutlinedButton(
-        style: ButtonStyle(
-          side: MaterialStateProperty.all<BorderSide>(
-              BorderSide(color: Colors.orange)),
-        ),
-        onPressed: () {},
-        child: Text(
-          "Other amount",
-          style: TextStyle(
-            color: Colors.orange,
-            fontSize: 20,
-          ),
-        ),
       ),
     );
   }
